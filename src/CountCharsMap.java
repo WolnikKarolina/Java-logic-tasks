@@ -5,17 +5,20 @@ public class CountCharsMap {
     public Map<Character, Integer> countChars(String text){
         Map<Character, Integer> count = new HashMap<>();
         for (int i = 0; i < text.length(); i++) {
-            count.put(text.charAt(i), count.getOrDefault(text.charAt(i),0) + 1);
+        count.merge(text.charAt(i), 1, Integer::sum);
         }
         return count;
     }
-    // ta linijka zastępuje cały if/else
+    //rozw2
+    // count.put(text.charAt(i), count.getOrDefault(text.charAt(i),0) + 1);
+    // rozw1
     //if ( count.containsKey(text.charAt(i))){
     //     int value = count.get(text.charAt(i));
     //     count.replace(text.charAt(i), value + 1);
     // } else {
     //     count.put(text.charAt(i), 1);
     // }
+
 
     // porwonaj czy dwa stringi sa anagramami
     public boolean isAnagram(String text1, String text2){
