@@ -18,7 +18,7 @@ public class MostFrequentWord {
        //         result = s.getKey();
         //    }
         //}
-        return map.entrySet().stream().max(Comparator.comparingInt(Map.Entry::getValue)).orElse(null).getKey();
+        return map.entrySet().stream().max(Comparator.comparingInt(Map.Entry::getValue)).map(Map.Entry::getKey).orElse(null);
 
     }
 }
